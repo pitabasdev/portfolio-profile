@@ -20,6 +20,133 @@
       box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
       text-decoration: none;
     }
+
+    .skills-chart {
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .skill {
+      margin: 1em 0;
+      position: relative;
+      width: 22.5em;
+    }
+
+    .skill__type {
+      color: #fff;
+      text-transform: uppercase;
+      position: relative;
+      top: 5px;
+      font-family: "Open Sans", sans-serif !important;
+      font-weight: 400 !important;
+      line-height: 1.3;
+      font-size: 12px;
+      letter-spacing: 1.65px;
+    }
+
+    .skill__outer-bar,
+    .skill__inner-bar {
+      height: 0.75em;
+      border-radius: 10px;
+    }
+
+    .skill__outer-bar {
+      background: #333;
+      background: #141414;
+      box-shadow: inset 0 1px 2px #0000001a;
+      border: 2px solid rgba(26, 26, 26, 0.45);
+      z-index: 2;
+      background-image: -webkit-linear-gradient(top, rgba(226, 222, 218, 0.25), rgba(233, 229, 226, 0.25));
+      height: 0.975em;
+    }
+
+    .skill__inner-bar {
+      -webkit-animation: fillBar 1s forwards;
+      animation: fillBar 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+      left: 5em;
+      transform: scaleX(0);
+      transform-origin: 0 0;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05), 0 1px rgba(255, 255, 255, 0.8);
+      background: #f0f0f0;
+      box-shadow: 0px -3px 2px 0px #212428 inset, 0px 2px 2px #535d65 inset, 0px 2px 2px -1px #050606, 0px 7px 4px -1px #1a1d1f;
+      text-shadow: 0px 1px 1px #33393e, 0 0 0 black, 0px 1px 1px #33393e;
+      border: 1px solid #15181a;
+      background: linear-gradient(#3c4349, #252a2d);
+    }
+
+    .skill__inner-bar--90 {
+      width: 90%;
+    }
+
+    .skill__inner-bar--85 {
+      width: 85%;
+    }
+
+    .skill__inner-bar--80 {
+      width: 80%;
+    }
+
+    .skill__inner-bar--70 {
+      width: 70%;
+    }
+
+    @keyframes fillBar {
+      to {
+        transform: scaleX(1);
+      }
+    }
+
+    .skill__inner-bar.skill__inner-bar::after {
+      position: absolute;
+      top: -30px;
+      right: 0;
+      font-weight: 500;
+      background: #000;
+      color: #fff;
+      padding: 1px 8px;
+      font-size: 12px;
+      border-radius: 4px 4px 0px 4px;
+      opacity: 0;
+      animation: showText2 0.5s 1.5s linear forwards;
+    }
+
+    .skill__inner-bar.skill__inner-bar::before {
+      position: absolute;
+      content: "";
+      top: -15px;
+      right: 0;
+      height: 0;
+      width: 0;
+      border: 7px solid transparent;
+      border-bottom-width: 0px;
+      border-right-width: 0px;
+      border-top-color: #000;
+      opacity: 0;
+      animation: showText2 0.5s 1.5s linear forwards;
+    }
+
+    @keyframes showText2 {
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .skill__inner-bar.skill__inner-bar--90::after {
+      content: "90%";
+    }
+
+    .skill__inner-bar.skill__inner-bar--85::after {
+      content: "85%";
+    }
+
+    .skill__inner-bar.skill__inner-bar--80::after {
+      content: "80%";
+    }
+
+    .skill__inner-bar.skill__inner-bar--70::after {
+      content: "70%";
+    }
   </style>
 </head>
 
@@ -107,7 +234,7 @@
 
         <div class="section-detail-wrapper">
           <!-- <h3 class="section-heading">Hello!</h3> -->
-          <img id="profile-about" style="height: 100px;" src="./assets/WhatsApp Image 2023-02-11 at 21.57.42.png"/>
+          <img id="profile-about" style="height: 100px;" src="./assets/WhatsApp Image 2023-02-11 at 21.57.42.png" />
           <p class="section-text">Hello, I'm Pitabas Pradhan, a passionate and dedicated computer science student
             currently pursuing my B.Tech degree at Centurion University of Technology and Management. My journey in the
             world of technology has been an exhilarating one, filled with exploration, learning, and innovation. With a
@@ -433,42 +560,53 @@
         </div>
 
         <div class="section-detail-wrapper">
-          <p><img
-              src="https://media.licdn.com/dms/image/C4D0BAQHRrdtx0zZ4VQ/company-logo_100_100/0/1660064387614?e=2147483647&amp;v=beta&amp;t=saO3MpAFB1eCulaEOsll2EuDA2ziohWuANz1HJcvPaI"
-              alt="Cyber Intelligence Solutions Graphic"></p>
-          <br>
-          <br>
-          <h4
-            id="-cyber-intelligence-solutions-https-www-linkedin-com-company-official-cis-trk-public_profile_experience-item_profile-section-card_subtitle-click-">
-            <a href="https://cyberintelligencesolution.com">Cyber Intelligence Solutions</a>
-          </h4>
-          <br>
-          <p><strong>Ethical Hacker Intern</strong> [ Oct 2022 - Dec 2022 ]</p>
-          <p> <strong>Junior Cybersecurity Trainee</strong> [ Jan 2023 - Present ]</p>
-          <br>
-          <p>• Performing Web Application Penetration Testing.<br>• Conducting Seminar at Colleges.<br>• Performing
-            Black box, Grey box &amp; White box Pentests.<br>• Creating reports, detailing assessment findings &amp;
-            blog writing.</p>
-          <br>
-          <br>
-          <picture> <img img
-              src="https://media.licdn.com/dms/image/D5622AQHxeijgQwXRlA/feedshare-shrink_800/0/1680503845504?e=1684972800&v=beta&t=0eWuE7XO-sy3b_WyWphDPJpo1GEsve87Cs8U6UTui2w"
-              width="200"></picture>
+          <div class="center-skills">
+            <section class="skills-chart">
+              <div class="skill">
+                <h3 class="skill__type">HTML / HTML5 & CSS</h3><br>
+                <div class="skill__outer-bar">
+                  <div class="skill__inner-bar skill__inner-bar--90"></div>
+                </div>
+              </div>
+              <div class="skill">
+                <h3 class="skill__type">React js</h3><br>
+                <div class="skill__outer-bar">
+                  <div class="skill__inner-bar skill__inner-bar--80"></div>
+                </div>
+              </div>
+              <div class="skill">
+                <h3 class="skill__type">Node js</h3><br>
+                <div class="skill__outer-bar">
+                  <div class="skill__inner-bar skill__inner-bar--80"></div>
+                </div>
+              </div>
+              <div class="skill">
+                <h3 class="skill__type">mongoDB</h3><br>
+                <div class="skill__outer-bar">
+                  <div class="skill__inner-bar skill__inner-bar--80"></div>
+                </div>
+              </div>
+              <div class="skill">
+                <h3 class="skill__type">MySql</h3><br>
+                <div class="skill__outer-bar">
+                  <div class="skill__inner-bar skill__inner-bar--80"></div>
+                </div>
+              </div>
 
-          <picture> <img img
-              src="https://media.licdn.com/dms/image/C562DAQH95qId0yOFRw/profile-treasury-image-shrink_160_160/0/1676288307104?e=1683892800&v=beta&t=i5ELsoMvDcq0fjg9TITmgyYfJCco0MuFD_FwLZN0Br0"
-              width="170"></picture>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <h2 id="recommendation-letter">Recommendation Letter</h2>
-          <br>
-          <br>
-          <p><img src="https://github.com/MdAmiruddin/mdamiruddin-3dportfolio/raw/main/public/social/credly.jpg"
-              width="500" alt=""></p>
-
+              <div class="skill">
+                <h3 class="skill__type">Java</h3><br>
+                <div class="skill__outer-bar">
+                  <div class="skill__inner-bar skill__inner-bar--70"></div>
+                </div>
+              </div>
+              <div class="skill">
+                <h3 class="skill__type">Android App Development</h3><br>
+                <div class="skill__outer-bar">
+                  <div class="skill__inner-bar skill__inner-bar--70"></div>
+                </div>
+              </div>
+            </section>
+          </div>
         </div>
       </section>
 
@@ -504,12 +642,13 @@
           <p class="section-text">I am an aspiring Computer Science student and avid tech enthusiast. I can be found on
             Github, where I participate in the open source community. I am always searching for different ways to learn
             and share knowledge pertaining to web development. I stay up to date with the newest technology,
-            vulnerabilities, trends, and web development advancements. If you are looking to collaborate with someone who
+            vulnerabilities, trends, and web development advancements. If you are looking to collaborate with someone
+            who
             has a passion for learning and innovation, then you've come to the right place!</p>
           <br>
           <p><a href="https://github.com/pitabasdev"><img
                 src="https://img.shields.io/badge/Github-12100E?logo=github&amp;logoColor=white" alt="Medium"></a> </p>
-        
+
         </div>
       </section>
       <footer class="footer">

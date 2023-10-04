@@ -18,7 +18,7 @@
 
 ## Live Demo
 
-Check out my portfolio [here]([https://your-portfolio-link.com](https://portfolio-pitabas1977.vercel.app/)).
+Check out my portfolio [here](https://portfolio-pitabas1977.vercel.app/).
 
 ## Screenshots
 

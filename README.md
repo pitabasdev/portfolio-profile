@@ -31,4 +31,4 @@ Check out my portfolio [here](https://portfolio-pitabas1977.vercel.app/).
 1. Clone the repository:
 
    ```bash
-   git clone [https://github.com/your-username/your-portfolio.git](https://github.com/pitabasdev/portfolio-profile)https://github.com/pitabasdev/portfolio-profile
+   git clone https://github.com/pitabasdev/portfolio-profile

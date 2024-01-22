@@ -1,737 +1,933 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="./icons8-p-48.png" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, target-densityDpi=device-dpi, minimal-ui"
+		/>
+		<title>Pitabas Pradhan</title>
+		<meta property="og:title" content="Pitabas Pradhan" />
+		<meta name="description" content="Pitabas Pradhan" />
+		<meta name="twitter:card" content="summary" />
+		<style>
+			#resume {
+				background: #fff;
+				margin-top: 10px;
+				margin-left: 10px;
+				padding: 4px;
+				width: 125px;
+				box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+					rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+					rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+				text-decoration: none;
+			}
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="./icons8-p-48.png" />
-  <meta name='viewport'
-    content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, target-densityDpi=device-dpi, minimal-ui' />
-  <title>Pitabas Pradhan</title>
-  <meta property="og:title" content="Pitabas Pradhan" />
-  <meta name="description" content="Pitabas Pradhan" />
-  <meta name="twitter:card" content="summary" />
-  <style>
-    #resume {
-      background: #fff;
-      margin-top: 10px;
-      margin-left: 10px;
-      padding: 4px;
-      width: 125px;
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-      text-decoration: none;
-    }
+			.skills-chart {
+				align-self: center;
+				display: flex;
+				flex-direction: column;
+			}
 
-    .skills-chart {
-      align-self: center;
-      display: flex;
-      flex-direction: column;
-    }
+			.skill {
+				margin: 1em 0;
+				position: relative;
+				width: 22.5em;
+			}
 
-    .skill {
-      margin: 1em 0;
-      position: relative;
-      width: 22.5em;
-    }
+			.skill__type {
+				color: #000000;
+				text-transform: uppercase;
+				position: relative;
+				top: 5px;
+				font-family: "Open Sans", sans-serif !important;
+				font-weight: 400 !important;
+				line-height: 1.3;
+				font-size: 12px;
+				letter-spacing: 1.65px;
+			}
 
-    .skill__type {
-      color: #000000;
-      text-transform: uppercase;
-      position: relative;
-      top: 5px;
-      font-family: "Open Sans", sans-serif !important;
-      font-weight: 400 !important;
-      line-height: 1.3;
-      font-size: 12px;
-      letter-spacing: 1.65px;
-    }
+			.skill__outer-bar,
+			.skill__inner-bar {
+				height: 0.75em;
+				border-radius: 10px;
+			}
 
-    .skill__outer-bar,
-    .skill__inner-bar {
-      height: 0.75em;
-      border-radius: 10px;
-    }
+			.skill__outer-bar {
+				background: #333;
+				background: #141414;
+				box-shadow: inset 0 1px 2px #0000001a;
+				border: 2px solid rgba(26, 26, 26, 0.45);
+				z-index: 2;
+				background-image: -webkit-linear-gradient(
+					top,
+					rgba(226, 222, 218, 0.25),
+					rgba(233, 229, 226, 0.25)
+				);
+				height: 0.975em;
+			}
 
-    .skill__outer-bar {
-      background: #333;
-      background: #141414;
-      box-shadow: inset 0 1px 2px #0000001a;
-      border: 2px solid rgba(26, 26, 26, 0.45);
-      z-index: 2;
-      background-image: -webkit-linear-gradient(top, rgba(226, 222, 218, 0.25), rgba(233, 229, 226, 0.25));
-      height: 0.975em;
-    }
+			.skill__inner-bar {
+				-webkit-animation: fillBar 1s forwards;
+				animation: fillBar 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+				left: 5em;
+				transform: scaleX(0);
+				transform-origin: 0 0;
+				box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05),
+					0 1px rgba(255, 255, 255, 0.8);
+				background: #f0f0f0;
+				box-shadow: 0px -3px 2px 0px #212428 inset, 0px 2px 2px #535d65 inset,
+					0px 2px 2px -1px #050606, 0px 7px 4px -1px #1a1d1f;
+				text-shadow: 0px 1px 1px #33393e, 0 0 0 black, 0px 1px 1px #33393e;
+				border: 1px solid #15181a;
+				background: linear-gradient(#3c4349, #252a2d);
+			}
 
-    .skill__inner-bar {
-      -webkit-animation: fillBar 1s forwards;
-      animation: fillBar 1s cubic-bezier(1, 0, 0.5, 1) forwards;
-      left: 5em;
-      transform: scaleX(0);
-      transform-origin: 0 0;
-      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05), 0 1px rgba(255, 255, 255, 0.8);
-      background: #f0f0f0;
-      box-shadow: 0px -3px 2px 0px #212428 inset, 0px 2px 2px #535d65 inset, 0px 2px 2px -1px #050606, 0px 7px 4px -1px #1a1d1f;
-      text-shadow: 0px 1px 1px #33393e, 0 0 0 black, 0px 1px 1px #33393e;
-      border: 1px solid #15181a;
-      background: linear-gradient(#3c4349, #252a2d);
-    }
+			.skill__inner-bar--98 {
+				width: 98%;
+			}
 
-    .skill__inner-bar--98 {
-      width: 98%;
-    }
+			.skill__inner-bar--80 {
+				width: 80%;
+			}
 
-    .skill__inner-bar--80 {
-      width: 80%;
-    }
+			.skill__inner-bar--75 {
+				width: 80%;
+			}
 
-    .skill__inner-bar--75 {
-      width: 80%;
-    }
+			.skill__inner-bar--70 {
+				width: 70%;
+			}
+			.skill__inner-bar--76 {
+				width: 76%;
+			}
+			.skill__inner-bar--65 {
+				width: 65%;
+			}
+			.skill__inner-bar--60 {
+				width: 60%;
+			}
+			.skill__inner-bar--93 {
+				width: 93%;
+			}
 
-    .skill__inner-bar--70 {
-      width: 70%;
-    }
-       .skill__inner-bar--76 {
-      width: 76%;
-    }
-    .skill__inner-bar--65 {
-      width: 65%;
-    }
-    .skill__inner-bar--60 {
-      width: 60%;
-    }
-       .skill__inner-bar--93 {
-      width: 93%;
-    }
+			@keyframes fillBar {
+				to {
+					transform: scaleX(1);
+				}
+			}
 
-    @keyframes fillBar {
-      to {
-        transform: scaleX(1);
-      }
-    }
+			.skill__inner-bar.skill__inner-bar::after {
+				position: absolute;
+				top: -30px;
+				right: 0;
+				font-weight: 500;
+				background: #000;
+				color: #fff;
+				padding: 1px 8px;
+				font-size: 12px;
+				border-radius: 4px 4px 0px 4px;
+				opacity: 0;
+				animation: showText2 0.5s 1.5s linear forwards;
+			}
 
-    .skill__inner-bar.skill__inner-bar::after {
-      position: absolute;
-      top: -30px;
-      right: 0;
-      font-weight: 500;
-      background: #000;
-      color: #fff;
-      padding: 1px 8px;
-      font-size: 12px;
-      border-radius: 4px 4px 0px 4px;
-      opacity: 0;
-      animation: showText2 0.5s 1.5s linear forwards;
-    }
+			.skill__inner-bar.skill__inner-bar::before {
+				position: absolute;
+				content: "";
+				top: -15px;
+				right: 0;
+				height: 0;
+				width: 0;
+				border: 7px solid transparent;
+				border-bottom-width: 0px;
+				border-right-width: 0px;
+				border-top-color: #000;
+				opacity: 0;
+				animation: showText2 0.5s 1.5s linear forwards;
+			}
 
-    .skill__inner-bar.skill__inner-bar::before {
-      position: absolute;
-      content: "";
-      top: -15px;
-      right: 0;
-      height: 0;
-      width: 0;
-      border: 7px solid transparent;
-      border-bottom-width: 0px;
-      border-right-width: 0px;
-      border-top-color: #000;
-      opacity: 0;
-      animation: showText2 0.5s 1.5s linear forwards;
-    }
+			@keyframes showText2 {
+				100% {
+					opacity: 1;
+				}
+			}
 
-    @keyframes showText2 {
-      100% {
-        opacity: 1;
-      }
-    }
+			.skill__inner-bar.skill__inner-bar--98::after {
+				content: "98%";
+			}
 
-    .skill__inner-bar.skill__inner-bar--98::after {
-      content: "98%";
-    }
+			.skill__inner-bar.skill__inner-bar--80::after {
+				content: "80%";
+			}
 
-    .skill__inner-bar.skill__inner-bar--80::after {
-      content: "80%";
-    }
+			.skill__inner-bar.skill__inner-bar--75::after {
+				content: "75%";
+			}
 
-    .skill__inner-bar.skill__inner-bar--75::after {
-      content: "75%";
-    }
+			.skill__inner-bar.skill__inner-bar--70::after {
+				content: "70%";
+			}
+			.skill__inner-bar.skill__inner-bar--76::after {
+				content: "76%";
+			}
+			.skill__inner-bar.skill__inner-bar--65::after {
+				content: "65%";
+			}
+			.skill__inner-bar.skill__inner-bar--60::after {
+				content: "60%";
+			}
+			.skill__inner-bar.skill__inner-bar--93::after {
+				content: "93%";
+			}
+		</style>
+	</head>
 
-    .skill__inner-bar.skill__inner-bar--70::after {
-      content: "70%";
-    }
-    .skill__inner-bar.skill__inner-bar--76::after {
-      content: "76%";
-    }
-    .skill__inner-bar.skill__inner-bar--65::after {
-      content: "65%";
-    }
-    .skill__inner-bar.skill__inner-bar--60::after {
-      content: "60%";
-    }
-    .skill__inner-bar.skill__inner-bar--93::after {
-      content: "93%";
-    }
-  </style>
-</head>
+	<body class="light-theme">
+		<div class="experience">
+			<canvas class="experience-canvas"></canvas>
+		</div>
 
-<body class="light-theme">
-  <div class="experience">
-    <canvas class="experience-canvas"></canvas>
-  </div>
+		<!-- Preloader -->
+		<div class="preloader">
+			<div class="preloader-wrapper">
+				<div class="loading">
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+				</div>
+			</div>
+		</div>
 
-  <!-- Preloader -->
-  <div class="preloader">
-    <div class="preloader-wrapper">
-      <div class="loading">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-      </div>
-    </div>
-  </div>
+		<div class="page" asscroll-container>
+			<div class="toggle-bar">
+				<div class="sun-wrapper">
+					<svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+						<path
+							fill="currentColor"
+							d="M12 5Q11.575 5 11.288 4.712Q11 4.425 11 4V2Q11 1.575 11.288 1.287Q11.575 1 12 1Q12.425 1 12.713 1.287Q13 1.575 13 2V4Q13 4.425 12.713 4.712Q12.425 5 12 5ZM16.95 7.05Q16.675 6.775 16.675 6.362Q16.675 5.95 16.95 5.65L18.35 4.225Q18.65 3.925 19.062 3.925Q19.475 3.925 19.775 4.225Q20.05 4.5 20.05 4.925Q20.05 5.35 19.775 5.625L18.35 7.05Q18.075 7.325 17.65 7.325Q17.225 7.325 16.95 7.05ZM20 13Q19.575 13 19.288 12.712Q19 12.425 19 12Q19 11.575 19.288 11.287Q19.575 11 20 11H22Q22.425 11 22.712 11.287Q23 11.575 23 12Q23 12.425 22.712 12.712Q22.425 13 22 13ZM12 23Q11.575 23 11.288 22.712Q11 22.425 11 22V20Q11 19.575 11.288 19.288Q11.575 19 12 19Q12.425 19 12.713 19.288Q13 19.575 13 20V22Q13 22.425 12.713 22.712Q12.425 23 12 23ZM5.65 7.05 4.225 5.65Q3.925 5.35 3.925 4.925Q3.925 4.5 4.225 4.225Q4.5 3.95 4.925 3.95Q5.35 3.95 5.625 4.225L7.05 5.65Q7.325 5.925 7.325 6.35Q7.325 6.775 7.05 7.05Q6.75 7.325 6.35 7.325Q5.95 7.325 5.65 7.05ZM18.35 19.775 16.95 18.35Q16.675 18.05 16.675 17.638Q16.675 17.225 16.95 16.95Q17.225 16.675 17.638 16.675Q18.05 16.675 18.35 16.95L19.775 18.35Q20.075 18.625 20.062 19.05Q20.05 19.475 19.775 19.775Q19.475 20.075 19.05 20.075Q18.625 20.075 18.35 19.775ZM2 13Q1.575 13 1.288 12.712Q1 12.425 1 12Q1 11.575 1.288 11.287Q1.575 11 2 11H4Q4.425 11 4.713 11.287Q5 11.575 5 12Q5 12.425 4.713 12.712Q4.425 13 4 13ZM4.225 19.775Q3.95 19.5 3.95 19.075Q3.95 18.65 4.225 18.375L5.65 16.95Q5.925 16.675 6.338 16.675Q6.75 16.675 7.05 16.95Q7.35 17.25 7.35 17.663Q7.35 18.075 7.05 18.375L5.65 19.775Q5.35 20.075 4.925 20.075Q4.5 20.075 4.225 19.775ZM12 18Q9.5 18 7.75 16.25Q6 14.5 6 12Q6 9.5 7.75 7.75Q9.5 6 12 6Q14.5 6 16.25 7.75Q18 9.5 18 12Q18 14.5 16.25 16.25Q14.5 18 12 18ZM12 16Q13.65 16 14.825 14.825Q16 13.65 16 12Q16 10.35 14.825 9.175Q13.65 8 12 8Q10.35 8 9.175 9.175Q8 10.35 8 12Q8 13.65 9.175 14.825Q10.35 16 12 16Z"
+						/>
+					</svg>
+				</div>
+				<button class="toggle-button">
+					<div class="toggle-circle"></div>
+				</button>
 
-  <div class="page" asscroll-container>
+				<div class="moon-wrapper">
+					<svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+						<path
+							fill="currentColor"
+							d="M12 21Q8.25 21 5.625 18.375Q3 15.75 3 12Q3 8.25 5.625 5.625Q8.25 3 12 3Q12.35 3 12.688 3.025Q13.025 3.05 13.35 3.1Q12.325 3.825 11.713 4.987Q11.1 6.15 11.1 7.5Q11.1 9.75 12.675 11.325Q14.25 12.9 16.5 12.9Q17.875 12.9 19.025 12.287Q20.175 11.675 20.9 10.65Q20.95 10.975 20.975 11.312Q21 11.65 21 12Q21 15.75 18.375 18.375Q15.75 21 12 21ZM12 19Q14.2 19 15.95 17.788Q17.7 16.575 18.5 14.625Q18 14.75 17.5 14.825Q17 14.9 16.5 14.9Q13.425 14.9 11.262 12.738Q9.1 10.575 9.1 7.5Q9.1 7 9.175 6.5Q9.25 6 9.375 5.5Q7.425 6.3 6.213 8.05Q5 9.8 5 12Q5 14.9 7.05 16.95Q9.1 19 12 19ZM11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Z"
+						/>
+					</svg>
+				</div>
+				<br />
+			</div>
+			<span
+				><a
+					href="./assets/Pitabas_200101120049.pdf"
+					id="resume"
+					style="display: block"
+					>Download CV</a
+				></span
+			>
+			<div class="page-wrapper" asscroll>
+				<section class="hero">
+					<div class="hero-wrapper">
+						<!-- Intro Stuff -->
+						<div class="intro-text">Welcome to my portfolio!</div>
+						<div class="arrow-svg-wrapper">
+							<svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+								<path
+									fill="currentColor"
+									d="M12 14.95q-.2 0-.375-.063-.175-.062-.325-.212L6.675 10.05q-.275-.275-.262-.688.012-.412.287-.687.275-.275.7-.275.425 0 .7.275l3.9 3.9 3.925-3.925q.275-.275.688-.263.412.013.687.288.275.275.275.7 0 .425-.275.7l-4.6 4.6q-.15.15-.325.212-.175.063-.375.063Z"
+								/>
+							</svg>
+						</div>
 
-    <div class="toggle-bar">
-      <div class="sun-wrapper">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
-          <path fill="currentColor"
-            d="M12 5Q11.575 5 11.288 4.712Q11 4.425 11 4V2Q11 1.575 11.288 1.287Q11.575 1 12 1Q12.425 1 12.713 1.287Q13 1.575 13 2V4Q13 4.425 12.713 4.712Q12.425 5 12 5ZM16.95 7.05Q16.675 6.775 16.675 6.362Q16.675 5.95 16.95 5.65L18.35 4.225Q18.65 3.925 19.062 3.925Q19.475 3.925 19.775 4.225Q20.05 4.5 20.05 4.925Q20.05 5.35 19.775 5.625L18.35 7.05Q18.075 7.325 17.65 7.325Q17.225 7.325 16.95 7.05ZM20 13Q19.575 13 19.288 12.712Q19 12.425 19 12Q19 11.575 19.288 11.287Q19.575 11 20 11H22Q22.425 11 22.712 11.287Q23 11.575 23 12Q23 12.425 22.712 12.712Q22.425 13 22 13ZM12 23Q11.575 23 11.288 22.712Q11 22.425 11 22V20Q11 19.575 11.288 19.288Q11.575 19 12 19Q12.425 19 12.713 19.288Q13 19.575 13 20V22Q13 22.425 12.713 22.712Q12.425 23 12 23ZM5.65 7.05 4.225 5.65Q3.925 5.35 3.925 4.925Q3.925 4.5 4.225 4.225Q4.5 3.95 4.925 3.95Q5.35 3.95 5.625 4.225L7.05 5.65Q7.325 5.925 7.325 6.35Q7.325 6.775 7.05 7.05Q6.75 7.325 6.35 7.325Q5.95 7.325 5.65 7.05ZM18.35 19.775 16.95 18.35Q16.675 18.05 16.675 17.638Q16.675 17.225 16.95 16.95Q17.225 16.675 17.638 16.675Q18.05 16.675 18.35 16.95L19.775 18.35Q20.075 18.625 20.062 19.05Q20.05 19.475 19.775 19.775Q19.475 20.075 19.05 20.075Q18.625 20.075 18.35 19.775ZM2 13Q1.575 13 1.288 12.712Q1 12.425 1 12Q1 11.575 1.288 11.287Q1.575 11 2 11H4Q4.425 11 4.713 11.287Q5 11.575 5 12Q5 12.425 4.713 12.712Q4.425 13 4 13ZM4.225 19.775Q3.95 19.5 3.95 19.075Q3.95 18.65 4.225 18.375L5.65 16.95Q5.925 16.675 6.338 16.675Q6.75 16.675 7.05 16.95Q7.35 17.25 7.35 17.663Q7.35 18.075 7.05 18.375L5.65 19.775Q5.35 20.075 4.925 20.075Q4.5 20.075 4.225 19.775ZM12 18Q9.5 18 7.75 16.25Q6 14.5 6 12Q6 9.5 7.75 7.75Q9.5 6 12 6Q14.5 6 16.25 7.75Q18 9.5 18 12Q18 14.5 16.25 16.25Q14.5 18 12 18ZM12 16Q13.65 16 14.825 14.825Q16 13.65 16 12Q16 10.35 14.825 9.175Q13.65 8 12 8Q10.35 8 9.175 9.175Q8 10.35 8 12Q8 13.65 9.175 14.825Q10.35 16 12 16Z" />
-        </svg>
-      </div>
-      <button class="toggle-button">
-        <div class="toggle-circle"></div>
-      </button>
+						<div class="hero-main">
+							<h1 class="hero-main-title">Pitabas Pradhan</h1>
+							<p class="hero-main-description">Computer Science Student</p>
+						</div>
 
-      <div class="moon-wrapper">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
-          <path fill="currentColor"
-            d="M12 21Q8.25 21 5.625 18.375Q3 15.75 3 12Q3 8.25 5.625 5.625Q8.25 3 12 3Q12.35 3 12.688 3.025Q13.025 3.05 13.35 3.1Q12.325 3.825 11.713 4.987Q11.1 6.15 11.1 7.5Q11.1 9.75 12.675 11.325Q14.25 12.9 16.5 12.9Q17.875 12.9 19.025 12.287Q20.175 11.675 20.9 10.65Q20.95 10.975 20.975 11.312Q21 11.65 21 12Q21 15.75 18.375 18.375Q15.75 21 12 21ZM12 19Q14.2 19 15.95 17.788Q17.7 16.575 18.5 14.625Q18 14.75 17.5 14.825Q17 14.9 16.5 14.9Q13.425 14.9 11.262 12.738Q9.1 10.575 9.1 7.5Q9.1 7 9.175 6.5Q9.25 6 9.375 5.5Q7.425 6.3 6.213 8.05Q5 9.8 5 12Q5 14.9 7.05 16.95Q9.1 19 12 19ZM11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Z" />
-        </svg>
-      </div><br>
+						<div class="hero-second">
+							<p class="hero-second-subheading first-sub">Pitabas Pradhan</p>
+							<p class="hero-second-subheading second-sub">Portfolio</p>
+						</div>
+					</div>
+				</section>
 
-    </div>
-    <span><a href="./assets/Pitabas_200101120049.pdf" id="resume" style="display: block;">Download CV</a></span>
-    <div class="page-wrapper" asscroll>
-      <section class="hero">
-        <div class="hero-wrapper">
+				<div class="first-move section-margin"></div>
 
-          <!-- Intro Stuff -->
-          <div class="intro-text">Welcome to my portfolio!</div>
-          <div class="arrow-svg-wrapper">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
-              <path fill="currentColor"
-                d="M12 14.95q-.2 0-.375-.063-.175-.062-.325-.212L6.675 10.05q-.275-.275-.262-.688.012-.412.287-.687.275-.275.7-.275.425 0 .7.275l3.9 3.9 3.925-3.925q.275-.275.688-.263.412.013.687.288.275.275.275.7 0 .425-.275.7l-4.6 4.6q-.15.15-.325.212-.175.063-.375.063Z" />
-            </svg>
-          </div>
+				<section class="first-section section left">
+					<div class="progress-wrapper progress-bar-wrapper-left">
+						<div class="progress-bar"></div>
+					</div>
 
-          <div class="hero-main">
-            <h1 class="hero-main-title">Pitabas Pradhan</h1>
-            <p class="hero-main-description">Computer Science Student</p>
-          </div>
+					<div class="section-intro-wrapper">
+						<h1 class="section-title">
+							<span class="section-title-text">About Me</span>
+							<div class="section-title-decoration styleOne"></div>
+							<div class="section-title-decoration styleTwo"></div>
+							<div class="section-title-decoration styleThree"></div>
+						</h1>
+						<span class="section-number">01</span>
+					</div>
 
-          <div class="hero-second">
-            <p class="hero-second-subheading first-sub">Pitabas Pradhan</p>
-            <p class="hero-second-subheading second-sub">Portfolio</p>
-          </div>
+					<div class="section-detail-wrapper">
+						<!-- <h3 class="section-heading">Hello!</h3> -->
+						<img
+							id="profile-about"
+							style="height: 100px"
+							src="./assets/WhatsApp Image 2023-02-11 at 21.57.42.png"
+						/>
+						<p class="section-text">
+							Hello, I'm Pitabas Pradhan, a passionate and dedicated computer
+							science student currently pursuing my B.Tech degree at Centurion
+							University of Technology and Management. My journey in the world
+							of technology has been an exhilarating one, filled with
+							exploration, learning, and innovation. With a strong foundation in
+							web development, I have honed my skills in key technologies like
+							React.js, Node.js, MongoDB,C++, and Java.
+						</p>
+						<p class="section-text">
+							My fascination with web development has led me to master the art
+							of creating responsive and dynamic websites. With proficiency in
+							React.js and Node.js, I can build interactive user interfaces and
+							robust backend systems, ensuring seamless user experiences. My
+							proficiency in database management using MongoDB allows me to
+							design efficient and scalable data solutions.
+						</p>
+						<p class="section-text">
+							In addition to web development, I have a strong foundation in C++
+							and Java, enabling me to tackle complex algorithms and software
+							development projects with precision. I thrive on challenges and am
+							always eager to expand my knowledge and skill set to stay at the
+							forefront of the ever-evolving tech industry.
+						</p>
+						<p class="section-text">
+							I love creating CTF Machines and love doing Machines From
+							HackTheBox!✌️.
+						</p>
+						<br />
+						<br />
+						<br />
+						<br />
+						<br />
+						<br />
+						<h1 id="education">EDUCATION</h1>
+						<br />
+						<br />
+						<br />
+						<p><img src="./cutm.png" style="height: 100px" alt="cutm" /></p>
+						<br />
+						<br />
+						<h3
+							id="-government-college-of-engineering-and-leather-technology-https-www-linkedin-com-school-gcelt-trk-public_profile_school-"
+						>
+							<a href="https://cutm.ac.in/"
+								>Centurion University of Technology and Management</a
+							>
+						</h3>
+						<br />
+						<br />
+						<h4
+							id="bachelor-of-technology-in-leather-technology"
+							style="text-transform: capitalize"
+						>
+							bachelor of technology in computer science Engineering
+						</h4>
+						<br />
+						<br />
+						<p>CGPA - 9.0</p>
+						<br />
+						<p>[ 2020 - 2024 ]</p>
+						<br />
+						<br />
+						<br />
+						<p><img src="./anch.png" style="height: 100px" alt="cutm" /></p>
+						<br />
+						<br />
+						<h3
+							id="-government-college-of-engineering-and-leather-technology-https-www-linkedin-com-school-gcelt-trk-public_profile_school-"
+						>
+							<a
+								href="https://anchalika-mahabidyalaya-jagannath-prasad.business.site/"
+								>Anchalika Degree College Jagannath Prasad,Ganjam</a
+							>
+						</h3>
+						<br />
+						<br />
+						<h4
+							id="bachelor-of-technology-in-leather-technology"
+							style="text-transform: capitalize"
+						>
+							Higher Secondary
+						</h4>
+						<br />
+						<br />
+						<p>63%</p>
+						<br />
+						<p>[ 2019 - 2020 ]</p>
+						<br />
+						<br />
+						<br />
+						<p><img src="./favicon.png" style="height: 100px" alt="cutm" /></p>
+						<br />
+						<br />
+						<h3
+							id="-government-college-of-engineering-and-leather-technology-https-www-linkedin-com-school-gcelt-trk-public_profile_school-"
+						>
+							<a
+								href="https://schools.org.in/ganjam/21191208101/g-s-bidyapitha-kaduamangarajpur.html"
+							>
+								G S Nodal Bidyapitha, Kadua Mangarajapur,Ganjam</a
+							>
+						</h3>
+						<br />
+						<br />
+						<h4
+							id="bachelor-of-technology-in-leather-technology"
+							style="text-transform: capitalize"
+						>
+							Matriculation
+						</h4>
+						<br />
+						<br />
+						<p>57%</p>
+						<br />
+						<p>[ 2018 ]</p>
+					</div>
+				</section>
 
-        </div>
-      </section>
+				<div class="second-move section-margin"></div>
 
-      <div class="first-move section-margin"></div>
+				<section class="second-section section right">
+					<div class="progress-wrapper progress-bar-wrapper-right">
+						<div class="progress-bar blue-background"></div>
+					</div>
 
-      <section class="first-section section left">
-        <div class="progress-wrapper progress-bar-wrapper-left">
-          <div class="progress-bar"></div>
-        </div>
+					<div class="section-intro-wrapper blue-text blue-border">
+						<h1 class="section-title blue-text blue-border">
+							<span class="section-title-text blue-text">My Projects</span>
+							<div class="section-title-decoration styleOne blue-border"></div>
+							<div class="section-title-decoration styleTwo blue-border"></div>
+							<div
+								class="section-title-decoration styleThree blue-background blue-border"
+							></div>
+						</h1>
+						<span class="section-number blue-text">02</span>
+					</div>
 
-        <div class="section-intro-wrapper">
-          <h1 class="section-title">
-            <span class="section-title-text">About Me</span>
-            <div class="section-title-decoration styleOne"></div>
-            <div class="section-title-decoration styleTwo"></div>
-            <div class="section-title-decoration styleThree"></div>
-          </h1>
-          <span class="section-number">01</span>
-        </div>
+					<div class="section-detail-wrapper">
+						<h3 class="section-heading">Code Converter (MERN)🚀</h3>
+						<h4 class="section-heading">1. Project Description::</h4>
+						<p class="section-text">
+							The Code Converter Application is a web-based tool that allows
+							users to convert code snippets between different programming
+							languages. It uses the MERN stack to provide a seamless user
+							experience.
+						</p>
+						<h4 class="section-heading">2. Technologies Used:</h4>
+						<p class="section-text">
+							<b>I. MongoDB:</b> For storing user accounts and their saved code
+							snippets.
+						</p>
+						<p class="section-text">
+							<b>II. Express.js:</b> For building the RESTful API that interacts
+							with the database and handles user requests.
+						</p>
+						<p class="section-text">
+							<b>III. React:</b> For building the frontend user interface and
+							rendering code conversion results.
+						</p>
+						<p class="section-text">
+							<b>IV. Node.js:</b> For running the server-side code and managing
+							the backend logic
+						</p>
+						<h4 class="section-heading">3. IDE:</h4>
+						<p class="section-text">Vs code,Postman,MongoDB Compass.</p>
+						<!-- <p class="section-text">The website consists of a landing page which contains a list of all the CTF events with links to the write-ups. Each write-up contains a detailed review and explanation of the challenge, an overview of the techniques used to solve it, and a list of key points that were learned throughout the experience.</p> -->
+						<br />
+						<p>
+							<picture> <img src="./code.jpg" width="500" /></picture>
+						</p>
+						<br />
+						<p>
+							<a
+								href="https://github.com/pitabasdev/code-converter-frontend"
+								title="code Converter"
+								>Github<img
+									src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy"
+									alt="External link"
+							/></a>
+						</p>
+						<br />
+						<p>
+							<a
+								href="https://code-converter-ox8q.onrender.com/"
+								title="code Converter"
+								>See Project<img
+									src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy"
+									alt="External link"
+							/></a>
+						</p>
 
+						<h3 class="section-heading">Notes Pro🚀</h3>
+						<h4 class="section-heading">1. Project Description::</h4>
+						<p class="section-text">
+							Android Notes app is an Android-based application that is built in
+							the Java and xml, notes application can help us to note the daily
+							task which needs to be done.Important meetings, events etc.
+						</p>
+						<p class="section-text">
+							Developed a feature-rich Android application for creating,
+							storing, and managing notes efficiently.
+						</p>
+						<br />
+						<h4 class="section-heading">2. Technologies Used:</h4>
+						<p class="section-text"><b>I. Programming Language:</b> Java.</p>
+						<p class="section-text">
+							<b>II. Authentication:</b> Firebase Authentication.
+						</p>
+						<p class="section-text">
+							<b>III. Cloud Storage:</b> Firebase Cloud Firestore or a similar
+							service.
+						</p>
+						<p class="section-text">
+							<b>IV. UI/UX:</b> Android XML layouts and Material Design
+							principles.
+						</p>
+						<p class="section-text"><b>IV. Version Control:</b> GitHub.</p>
+						<h4 class="section-heading">3. IDE:</h4>
+						<p class="section-text">Android Studio.</p>
+						<br />
+						<p>
+							<picture> <img src="./assets/notes.jpg" width="500" /></picture>
+						</p>
+						<br />
+						<p>
+							<a
+								href="https://github.com/pitabasdev/Notes-app"
+								title="Notes App"
+								>Github<img
+									src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy"
+									alt="External link"
+							/></a>
+						</p>
+						<br />
+						<p>
+							<a
+								href="https://play.google.com/store/apps/details?id=com.cutm.notesapp"
+								title="notes app"
+								>See Project<img
+									src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy"
+									alt="External link"
+							/></a>
+						</p>
 
-        <div class="section-detail-wrapper">
-          <!-- <h3 class="section-heading">Hello!</h3> -->
-          <img id="profile-about" style="height: 100px;" src="./assets/WhatsApp Image 2023-02-11 at 21.57.42.png" />
-          <p class="section-text">Hello, I'm Pitabas Pradhan, a passionate and dedicated computer science student
-            currently pursuing my B.Tech degree at Centurion University of Technology and Management. My journey in the
-            world of technology has been an exhilarating one, filled with exploration, learning, and innovation. With a
-            strong foundation in web development, I have honed my skills in key technologies like React.js, Node.js,
-            MongoDB,C++, and Java.</p>
-          <p class="section-text">My fascination with web development has led me to master the art of creating
-            responsive and dynamic websites. With proficiency in React.js and Node.js, I can build interactive user
-            interfaces and robust backend systems, ensuring seamless user experiences. My proficiency in database
-            management using MongoDB allows me to design efficient and scalable data solutions.</p>
-          <p class="section-text">In addition to web development, I have a strong foundation in C++ and Java, enabling
-            me to tackle complex algorithms and software development projects with precision. I thrive on challenges and
-            am always eager to expand my knowledge and skill set to stay at the forefront of the ever-evolving tech
-            industry.</p>
-          <p class="section-text"> I love creating CTF Machines and love doing Machines From HackTheBox!✌️.</p>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <h1 id="education">EDUCATION</h1>
-          <br>
-          <br>
-          <br>
-          <p><img src="./cutm.png" style="height: 100px;" alt="cutm"></p>
-          <br>
-          <br>
-          <h3
-            id="-government-college-of-engineering-and-leather-technology-https-www-linkedin-com-school-gcelt-trk-public_profile_school-">
-            <a href="https://cutm.ac.in/">Centurion University of Technology and Management</a>
-          </h3>
-          <br>
-          <br>
-          <h4 id="bachelor-of-technology-in-leather-technology" style="text-transform: capitalize;">bachelor of
-            technology in computer science Engineering</h4>
-          <br>
-          <br>
-          <p>CGPA - 9.0</p>
-          <br>
-          <p>[ 2020 - 2024 ]</p>
-          <br>
-          <br>
-          <br>
-          <p><img src="./anch.png" style="height: 100px;" alt="cutm"></p>
-          <br>
-          <br>
-          <h3
-            id="-government-college-of-engineering-and-leather-technology-https-www-linkedin-com-school-gcelt-trk-public_profile_school-">
-            <a href="https://anchalika-mahabidyalaya-jagannath-prasad.business.site/">Anchalika Degree College Jagannath
-              Prasad,Ganjam</a>
-          </h3>
-          <br>
-          <br>
-          <h4 id="bachelor-of-technology-in-leather-technology" style="text-transform: capitalize;">Higher Secondary
-          </h4>
-          <br>
-          <br>
-          <p>63%</p>
-          <br>
-          <p>[ 2019 - 2020 ]</p>
-          <br>
-          <br>
-          <br>
-          <p><img src="./favicon.png" style="height: 100px;" alt="cutm"></p>
-          <br>
-          <br>
-          <h3
-            id="-government-college-of-engineering-and-leather-technology-https-www-linkedin-com-school-gcelt-trk-public_profile_school-">
-            <a href="https://schools.org.in/ganjam/21191208101/g-s-bidyapitha-kaduamangarajpur.html"> G S Nodal
-              Bidyapitha, Kadua Mangarajapur,Ganjam</a>
-          </h3>
-          <br>
-          <br>
-          <h4 id="bachelor-of-technology-in-leather-technology" style="text-transform: capitalize;">Matriculation</h4>
-          <br>
-          <br>
-          <p>57%</p>
-          <br>
-          <p>[ 2018 ]</p>
-        </div>
-      </section>
+						<h3 class="section-heading">CodePen🚀</h3>
+						<h4 class="section-heading">1. Project Description::</h4>
+						<p class="section-text">
+							The project is a web application built using react js that offers
+							users a user-friendly interface to write and preview HTML, CSS and
+							JavaScript code in real-time. The project aims to provide an
+							interactive platform for developer, beginners and learns to
+							experiment with web development code snippets, test ideas and
+							showcase their work.
+						</p>
+						<br />
+						<h4 class="section-heading">2. Technologies Used:</h4>
+						<p class="section-text">
+							<b>I. React:</b> For building the frontend user interface and
+							rendering code conversion results.
+						</p>
+						<p class="section-text"><b>II. Version Control:</b> GitHub.</p>
+						<h4 class="section-heading">3. IDE:</h4>
+						<p class="section-text">Vs code.</p>
+						<br />
+						<p>
+							<picture> <img src="./assets/codepen.jpg" width="500" /></picture>
+						</p>
+						<br />
+						<br />
+						<p>
+							<a
+								href="https://github.com/pitabasdev/code-editor"
+								title="codepen"
+								>Github<img
+									src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy"
+									alt="External link"
+							/></a>
+						</p>
+						<br />
+						<p>
+							<a href="https://code-editor-k5dw.onrender.com/" title="code pen"
+								>See Project<img
+									src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy"
+									alt="External link"
+							/></a>
+						</p>
+						<h3 class="section-heading">WP Chat 🚀</h3>
+						<h4 class="section-heading">1. Project Description::</h4>
+						<p class="section-text">
+							The Android Chat application that facilitates seamless
+							communication and connectivity between users, enhancing their
+							digital interactions through real-time messaging.
+						</p>
+						<p class="section-text">
+							This project showcases strong skills in mobile app development,
+							UI/UX design, and real-time communication.
+						</p>
+						<br />
+						<h4 class="section-heading">2. Technologies Used:</h4>
+						<p class="section-text"><b>I. Programming Language:</b> Java.</p>
+						<p class="section-text">
+							<b>II. Authentication:</b> Firebase Authentication.
+						</p>
+						<p class="section-text">
+							<b>III. Cloud Storage:</b> Firebase Cloud Firestore or a similar
+							service.
+						</p>
+						<p class="section-text">
+							<b>IV. UI/UX:</b> Android XML layouts and Material Design
+							principles.
+						</p>
+						<p class="section-text"><b>IV. Version Control:</b> GitHub.</p>
+						<h4 class="section-heading">3. IDE:</h4>
+						<p class="section-text">Android Studio.</p>
+						<br />
+						<picture> <img src="./assets/wpchat.jpg" width="500" /></picture>
+						<br />
+						<br />
+						<p>
+							<a
+								href="https://github.com/pitabasdev/code-editor"
+								title="Wp Chat"
+								>Github<img
+									src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy"
+									alt="External link"
+							/></a>
+						</p>
+						<br />
+						<p>
+							<a
+								href="https://play.google.com/store/apps/details?id=com.chat.wpchat"
+								title="Wp Chat"
+								>See Project<img
+									src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy"
+									alt="External link"
+							/></a>
+						</p>
+						<h3 class="section-heading">YouTube Clone 🚀</h3>
+						<h4 class="section-heading">1. Project Description::</h4>
+						<p class="section-text">
+							In this project, I developed a YouTube clone using React js,
+							demonstrating my proficiency in modern web development
+							technologies and front-end design. The project aimed to replicate
+							the core functionalities of the popular video-sharing platform,
+							allowing users to browse, search, and watch video.
+						</p>
+						<br />
+						<h4 class="section-heading">2. Technologies Used:</h4>
+						<p class="section-text">
+							<b>I. React:</b> For building the frontend user interface and
+							rendering code conversion results.
+						</p>
+						<p class="section-text"><b>II. Version Control:</b> GitHub.</p>
+						<h4 class="section-heading">3. IDE:</h4>
+						<p class="section-text">Vs code.</p>
+						<br />
+						<picture> <img src="./assets/youtube.jpg" width="500" /></picture>
+						<br />
+						<br />
+						<p>
+							<a
+								href="https://github.com/pitabasdev/myotube-clone"
+								title="You Tube"
+								>Github<img
+									src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy"
+									alt="External link"
+							/></a>
+						</p>
+						<br />
+						<p>
+							<a
+								href="https://youtube-clone-uoee.onrender.com/"
+								title="You Tube"
+								>See Project<img
+									src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy"
+									alt="External link"
+							/></a>
+						</p>
+						<h3 class="section-heading">Weather App🚀</h3>
+						<h4 class="section-heading">1. Project Description::</h4>
+						<p class="section-text">
+							Developed a web-based weather application that allows users to
+							check the current weather conditions for a given location. The app
+							utilizes HTML, CSS, and JavaScript to create an interactive and
+							user-friendly interface. It fetches real-time weather data from a
+							public weather API to provide accurate and up-to-date information.
+						</p>
 
-      <div class="second-move section-margin"></div>
+						<br />
+						<h4 class="section-heading">2. Technologies Used:</h4>
+						<p class="section-text">
+							<b>I. HTML5:</b> Used for structuring the web page.
+						</p>
+						<p class="section-text">
+							<b>II.CSS3:</b> Styled the user interface to create an attractive
+							design.
+						</p>
+						<p class="section-text">
+							<b>III. JavaScript:</b> Implemented the logic for fetching and
+							displaying weather data.
+						</p>
+						<p class="section-text">
+							<b>IV. Weather API (e.g., OpenWeatherMap API):</b> Used to obtain
+							weather information.
+						</p>
+						<p class="section-text"><b>IV. Version Control:</b> GitHub.</p>
+						<h4 class="section-heading">3. IDE:</h4>
+						<p class="section-text">Vs Code</p>
+						<br />
+						<picture> <img src="./assets/weather.jpg" width="500" /></picture>
+						<br />
+						<br />
+						<p>
+							<a
+								href="https://github.com/pitabasdev/weather-app"
+								title="Wp Chat"
+								>Github<img
+									src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy"
+									alt="External link"
+							/></a>
+						</p>
+						<br />
+						<p>
+							<a href="http://weather-app.wuaze.com/?i=1" title="Wp Chat"
+								>See Project<img
+									src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy"
+									alt="External link"
+							/></a>
+						</p>
 
-      <section class="second-section section right">
-        <div class="progress-wrapper progress-bar-wrapper-right">
-          <div class="progress-bar blue-background"></div>
-        </div>
+						<h3 class="section-heading">Code Compiler🚀</h3>
+						<h4 class="section-heading">1. Project Description::</h4>
+						<p class="section-text">
+							1. Project Description: Code Compiler (MERN) The Code Compiler
+							(MERN) project is a web-based platform designed to compile and
+							execute code written in various programming languages. The acronym
+							MERN stands for MongoDB, Express.js, React.js, and Node.js,
+							indicating the use of these technologies to build the application.
+							The platform allows users to write, test, and run code snippets in
+							real-time, providing a convenient environment for learning,
+							practicing, and debugging code. Users can choose from a variety of
+							programming languages, including but not limited to JavaScript,
+							Python, Java, C++, and more. The project aims to offer a
+							user-friendly interface with features such as syntax highlighting,
+							code completion, and real-time output display to enhance the
+							coding experience..
+						</p>
 
-        <div class="section-intro-wrapper blue-text blue-border">
-          <h1 class="section-title blue-text blue-border">
-            <span class="section-title-text blue-text">My Projects</span>
-            <div class="section-title-decoration styleOne blue-border"></div>
-            <div class="section-title-decoration styleTwo blue-border"></div>
-            <div class="section-title-decoration styleThree blue-background blue-border"></div>
-          </h1>
-          <span class="section-number blue-text">02</span>
-        </div>
+						<br />
+						<h4 class="section-heading">2. Technologies Used:</h4>
+						<p class="section-text">
+							<b>I. MongoDB:</b>A NoSQL database for storing user profiles, code
+							snippets, and other relevant data.
+						</p>
+						<p class="section-text">
+							<b>II. Express.js:</b>A web application framework for Node.js,
+							used to build the backend API and handle server-side logic.
+						</p>
+						<p class="section-text">
+							<b>III. React.js:</b> A JavaScript library for building user
+							interfaces, used to create the frontend of the application.
+						</p>
+						<p class="section-text">
+							<b>IV. Node.js:</b> A runtime environment for executing JavaScript
+							code on the server side.
+						</p>
+						<p class="section-text"><b>IV. Version Control:</b> GitHub.</p>
+						<h4 class="section-heading">3. IDE:</h4>
+						<p class="section-text">Vs Code</p>
+						<br />
+						<picture>
+							<img src="./assets/code-compiler.png" width="500"
+						/></picture>
+						<br />
+						<br />
+						<p>
+							<a
+								href="https://github.com/pitabasdev/Visual-Studio-Code"
+								title="Code compiler"
+								>Github<img
+									src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy"
+									alt="External link"
+							/></a>
+						</p>
+						<br />
+						<p>
+							<a
+								href="https://visual-studio-code-three.vercel.app/"
+								title="Wp Chat"
+								>See Project<img
+									src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy"
+									alt="External link"
+							/></a>
+						</p>
+					</div>
+				</section>
 
-        <div class="section-detail-wrapper">
-          <h3 class="section-heading">Code Converter (MERN)🚀</h3>
-          <h4 class="section-heading">1. Project Description::</h4>
-          <p class="section-text">The Code Converter Application is a web-based tool that allows users to convert code
-            snippets between different programming languages. It uses the MERN stack to provide a seamless user
-            experience.</p>
-          <h4 class="section-heading">2. Technologies Used:</h4>
-          <p class="section-text">
-            <b>I. MongoDB:</b> For storing user accounts and their saved code snippets.
-          </p>
-          <p class="section-text">
-            <b>II. Express.js:</b> For building the RESTful API that interacts with the database and handles user
-            requests.
-          </p>
-          <p class="section-text">
-            <b>III. React:</b> For building the frontend user interface and rendering code conversion results.
-          </p>
-          <p class="section-text">
-            <b>IV. Node.js:</b> For running the server-side code and managing the backend logic
-          </p>
-          <h4 class="section-heading">3. IDE:</h4>
-          <p class="section-text">
-            Vs code,Postman,MongoDB Compass.
-          </p>
-          <!-- <p class="section-text">The website consists of a landing page which contains a list of all the CTF events with links to the write-ups. Each write-up contains a detailed review and explanation of the challenge, an overview of the techniques used to solve it, and a list of key points that were learned throughout the experience.</p> -->
-          <br>
-          <p>
-            <picture> <img src="./code.jpg" width="500"></picture>
-          </p>
-          <br>
-          <p><a href="https://github.com/pitabasdev/code-converter-frontend" title="code Converter">Github<img
-                src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p><br>
-          <p><a href="https://code-converter-ox8q.onrender.com/" title="code Converter">See Project<img
-                src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p>
+				<div class="third-move section-margin"></div>
 
+				<section class="third-section section left">
+					<div class="progress-wrapper progress-bar-wrapper-left">
+						<div class="progress-bar green-background"></div>
+					</div>
 
-          <h3 class="section-heading">Notes Pro🚀</h3>
-          <h4 class="section-heading">1. Project Description::</h4>
-          <p class="section-text">Android Notes app is an Android-based application that is built in the Java and xml,
-            notes application can help us to note the daily task which needs to be done.Important meetings, events etc.
-          </p>
-          <p class="section-text"> Developed a feature-rich Android application for creating, storing, and managing
-            notes efficiently.</p>
-          <br>
-          <h4 class="section-heading">2. Technologies Used:</h4>
-          <p class="section-text">
-            <b>I. Programming Language:</b> Java.
-          </p>
-          <p class="section-text">
-            <b>II. Authentication:</b> Firebase Authentication.
-          </p>
-          <p class="section-text">
-            <b>III. Cloud Storage:</b> Firebase Cloud Firestore or a similar service.
-          </p>
-          <p class="section-text">
-            <b>IV. UI/UX:</b> Android XML layouts and Material Design principles.
-          </p>
-          <p class="section-text">
-            <b>IV. Version Control:</b> GitHub.
-          </p>
-          <h4 class="section-heading">3. IDE:</h4>
-          <p class="section-text">
-            Android Studio.
-          </p>
-          <br>
-          <p>
-            <picture> <img src="./assets/notes.jpg" width="500"></picture>
-          </p>
-          <br>
-          <p><a href="https://github.com/pitabasdev/Notes-app" title="Notes App">Github<img
-                src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p><br>
-          <p><a href="https://play.google.com/store/apps/details?id=com.cutm.notesapp" title="notes app">See Project<img
-                src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p>
+					<div class="section-intro-wrapper green-text green-border">
+						<h1 class="section-title green-text green-border">
+							<span class="section-title-text green-text">Skills </span>
+							<div class="section-title-decoration styleOne green-border"></div>
+							<div class="section-title-decoration styleTwo green-border"></div>
+							<div
+								class="section-title-decoration styleThree green-background green-border"
+							></div>
+						</h1>
+						<span class="section-number green-text">03</span>
+					</div>
 
+					<div class="section-detail-wrapper">
+						<div class="center-skills">
+							<section class="skills-chart">
+								<div class="skill">
+									<h3 class="skill__type">HTML / HTML5 & CSS</h3>
+									<br />
+									<div class="skill__outer-bar">
+										<div class="skill__inner-bar skill__inner-bar--98"></div>
+									</div>
+								</div>
+								<div class="skill">
+									<h3 class="skill__type">Javascript</h3>
+									<br />
+									<div class="skill__outer-bar">
+										<div class="skill__inner-bar skill__inner-bar--93"></div>
+									</div>
+								</div>
+								<div class="skill">
+									<h3 class="skill__type">React js</h3>
+									<br />
+									<div class="skill__outer-bar">
+										<div class="skill__inner-bar skill__inner-bar--80"></div>
+									</div>
+								</div>
+								<div class="skill">
+									<h3 class="skill__type">Node js</h3>
+									<br />
+									<div class="skill__outer-bar">
+										<div class="skill__inner-bar skill__inner-bar--75"></div>
+									</div>
+								</div>
+								<div class="skill">
+									<h3 class="skill__type">mongoDB</h3>
+									<br />
+									<div class="skill__outer-bar">
+										<div class="skill__inner-bar skill__inner-bar--70"></div>
+									</div>
+								</div>
+								<div class="skill">
+									<h3 class="skill__type">MySql</h3>
+									<br />
+									<div class="skill__outer-bar">
+										<div class="skill__inner-bar skill__inner-bar--76"></div>
+									</div>
+								</div>
 
-          <h3 class="section-heading">CodePen🚀</h3>
-          <h4 class="section-heading">1. Project Description::</h4>
-          <p class="section-text">The project is a web application built using react js
-            that offers users a user-friendly interface to write and preview
-            HTML, CSS and JavaScript code in real-time. The project
-            aims to provide an interactive platform for developer,
-            beginners and learns to experiment with web development
-            code snippets, test ideas and showcase their work.</p>
-          <br>
-          <h4 class="section-heading">2. Technologies Used:</h4>
-          <p class="section-text">
-            <b>I. React:</b> For building the frontend user interface and rendering code conversion results.
-          </p>
-          <p class="section-text">
-            <b>II. Version Control:</b> GitHub.
-          </p>
-          <h4 class="section-heading">3. IDE:</h4>
-          <p class="section-text">
-            Vs code.
-          </p>
-          <br>
-          <p>
-            <picture> <img src="./assets/codepen.jpg" width="500"></picture>
-          </p>
-          <br>
-          <br>
-          <p><a href="https://github.com/pitabasdev/code-editor" title="codepen">Github<img
-                src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p><br>
-          <p><a href="https://code-editor-k5dw.onrender.com/" title="code pen">See Project<img
-                src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p>
-          <h3 class="section-heading">WP Chat 🚀</h3>
-          <h4 class="section-heading">1. Project Description::</h4>
-          <p class="section-text">The Android Chat application that facilitates
-            seamless communication and connectivity between users,
-            enhancing their digital interactions through real-time
-            messaging.</p>
-          <p class="section-text">This project showcases strong skills in mobile app development, UI/UX design, and
-            real-time communication.</p>
-          <br>
-          <h4 class="section-heading">2. Technologies Used:</h4>
-          <p class="section-text">
-            <b>I. Programming Language:</b> Java.
-          </p>
-          <p class="section-text">
-            <b>II. Authentication:</b> Firebase Authentication.
-          </p>
-          <p class="section-text">
-            <b>III. Cloud Storage:</b> Firebase Cloud Firestore or a similar service.
-          </p>
-          <p class="section-text">
-            <b>IV. UI/UX:</b> Android XML layouts and Material Design principles.
-          </p>
-          <p class="section-text">
-            <b>IV. Version Control:</b> GitHub.
-          </p>
-          <h4 class="section-heading">3. IDE:</h4>
-          <p class="section-text">
-            Android Studio.
-          </p>
-          <br>
-          <picture> <img src="./assets/wpchat.jpg" width="500"></picture>
-          <br>
-          <br>
-          <p><a href="https://github.com/pitabasdev/code-editor" title="Wp Chat">Github<img
-                src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p><br>
-          <p><a href="https://play.google.com/store/apps/details?id=com.chat.wpchat" title="Wp Chat">See Project<img
-                src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p>
-          <h3 class="section-heading">YouTube Clone 🚀</h3>
-          <h4 class="section-heading">1. Project Description::</h4>
-          <p class="section-text">In this project, I developed a YouTube clone
-            using React js, demonstrating my proficiency in modern web
-            development technologies and front-end design. The project aimed
-            to replicate the core functionalities of the popular video-sharing
-            platform, allowing users to browse, search, and watch video.</p>
-          <br>
-          <h4 class="section-heading">2. Technologies Used:</h4>
-          <p class="section-text">
-            <b>I. React:</b> For building the frontend user interface and rendering code conversion results.
-          </p>
-          <p class="section-text">
-            <b>II. Version Control:</b> GitHub.
-          </p>
-          <h4 class="section-heading">3. IDE:</h4>
-          <p class="section-text">
-            Vs code.
-          </p>
-          <br>
-          <picture> <img src="./assets/youtube.jpg" width="500"></picture>
-          <br>
-          <br>
-          <p><a href="https://github.com/pitabasdev/myotube-clone" title="You Tube">Github<img
-                src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p><br>
-          <p><a href="https://youtube-clone-uoee.onrender.com/" title="You Tube">See Project<img
-                src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p>
-          <h3 class="section-heading">Weather App🚀</h3>
-          <h4 class="section-heading">1. Project Description::</h4>
-          <p class="section-text">Developed a web-based weather application that allows users to check the current
-            weather conditions for a given location. The app utilizes HTML, CSS, and JavaScript to create an interactive
-            and user-friendly interface. It fetches real-time weather data from a public weather API to provide accurate
-            and up-to-date information.</p>
+								<div class="skill">
+									<h3 class="skill__type">Java</h3>
+									<br />
+									<div class="skill__outer-bar">
+										<div class="skill__inner-bar skill__inner-bar--65"></div>
+									</div>
+								</div>
+								<div class="skill">
+									<h3 class="skill__type">Android App Development</h3>
+									<br />
+									<div class="skill__outer-bar">
+										<div class="skill__inner-bar skill__inner-bar--60"></div>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+				</section>
 
-          <br>
-          <h4 class="section-heading">2. Technologies Used:</h4>
-          <p class="section-text">
-            <b>I. HTML5:</b> Used for structuring the web page.
-          </p>
-          <p class="section-text">
-            <b>II.CSS3:</b> Styled the user interface to create an attractive design.
-          </p>
-          <p class="section-text">
-            <b>III. JavaScript:</b> Implemented the logic for fetching and displaying weather data.
-          </p>
-          <p class="section-text">
-            <b>IV. Weather API (e.g., OpenWeatherMap API):</b> Used to obtain weather information.
-          </p>
-          <p class="section-text">
-            <b>IV. Version Control:</b> GitHub.
-          </p>
-          <h4 class="section-heading">3. IDE:</h4>
-          <p class="section-text">
-            Vs Code
-          </p>
-          <br>
-          <picture> <img src="./assets/weather.jpg" width="500"></picture>
-          <br>
-          <br>
-          <p><a href="https://github.com/pitabasdev/weather-app" title="Wp Chat">Github<img
-                src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p><br>
-          <p><a href="http://weather-app.wuaze.com/?i=1" title="Wp Chat">See Project<img
-                src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p>
+				<div class="second-move section-margin"></div>
 
+				<section class="second-section section right">
+					<div class="progress-wrapper progress-bar-wrapper-right">
+						<div class="progress-bar blue-background"></div>
+					</div>
 
-                <h3 class="section-heading">Code Compiler🚀</h3>
-                <h4 class="section-heading">1. Project Description::</h4>
-                <p class="section-text">
-                  1. Project Description: Code Compiler (MERN)
-                  
-                  The Code Compiler (MERN) project is a web-based platform designed to compile and execute code written in various programming languages. The acronym MERN stands for MongoDB, Express.js, React.js, and Node.js, indicating the use of these technologies to build the application. The platform allows users to write, test, and run code snippets in real-time, providing a convenient environment for learning, practicing, and debugging code.
-                  
-                  Users can choose from a variety of programming languages, including but not limited to JavaScript, Python, Java, C++, and more. The project aims to offer a user-friendly interface with features such as syntax highlighting, code completion, and real-time output display to enhance the coding experience..</p>
-      
-                <br>
-                <h4 class="section-heading">2. Technologies Used:</h4>
-                <p class="section-text">
-                  <b>I. MongoDB:</b>A NoSQL database for storing user profiles, code snippets, and other relevant data.
-                </p>
-                <p class="section-text">
-                  <b>II. Express.js:</b>A web application framework for Node.js, used to build the backend API and handle server-side logic.
-                </p>
-                <p class="section-text">
-                  <b>III. React.js:</b> A JavaScript library for building user interfaces, used to create the frontend of the application.
-                </p>
-                <p class="section-text">
-                  <b>IV. Node.js:</b> A runtime environment for executing JavaScript code on the server side.
-                </p>
-                <p class="section-text">
-                  <b>IV. Version Control:</b> GitHub.
-                </p>
-                <h4 class="section-heading">3. IDE:</h4>
-                <p class="section-text">
-                  Vs Code
-                </p>
-                <br>
-                <picture> <img src="./assets/code-compiler.png" width="500"></picture>
-                <br>
-                <br>
-                <p><a href="https://github.com/pitabasdev/Visual-Studio-Code" title="Code compiler">Github<img
-                      src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p><br>
-                <p><a href="https://visual-studio-code-three.vercel.app/" title="Wp Chat">See Project<img
-                      src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p>         
-        </div>
-      </section>
+					<div class="section-intro-wrapper blue-text blue-border">
+						<h1 class="section-title blue-text blue-border">
+							<span class="section-title-text blue-text">CONTACT</span>
+							<div class="section-title-decoration styleOne blue-border"></div>
+							<div class="section-title-decoration styleTwo blue-border"></div>
+							<div
+								class="section-title-decoration styleThree blue-background blue-border"
+							></div>
+						</h1>
+						<span class="section-number blue-text">04</span>
+					</div>
 
-      <div class="third-move section-margin"></div>
-
-      <section class="third-section section left">
-        <div class="progress-wrapper progress-bar-wrapper-left">
-          <div class="progress-bar green-background"></div>
-        </div>
-
-        <div class="section-intro-wrapper green-text green-border">
-          <h1 class="section-title green-text green-border">
-            <span class="section-title-text green-text">Skills </span>
-            <div class="section-title-decoration styleOne green-border"></div>
-            <div class="section-title-decoration styleTwo green-border"></div>
-            <div class="section-title-decoration styleThree green-background green-border"></div>
-          </h1>
-          <span class="section-number green-text">03</span>
-        </div>
-
-        <div class="section-detail-wrapper">
-          <div class="center-skills">
-            <section class="skills-chart">
-              <div class="skill">
-                <h3 class="skill__type">HTML / HTML5 & CSS</h3><br>
-                <div class="skill__outer-bar">
-                  <div class="skill__inner-bar skill__inner-bar--98"></div>
-                </div>
-              </div>
-              <div class="skill">
-                <h3 class="skill__type">Javascript</h3><br>
-                <div class="skill__outer-bar">
-                  <div class="skill__inner-bar skill__inner-bar--93"></div>
-                </div>
-              </div>
-              <div class="skill">
-                <h3 class="skill__type">React js</h3><br>
-                <div class="skill__outer-bar">
-                  <div class="skill__inner-bar skill__inner-bar--80"></div>
-                </div>
-              </div>
-              <div class="skill">
-                <h3 class="skill__type">Node js</h3><br>
-                <div class="skill__outer-bar">
-                  <div class="skill__inner-bar skill__inner-bar--75"></div>
-                </div>
-              </div>
-              <div class="skill">
-                <h3 class="skill__type">mongoDB</h3><br>
-                <div class="skill__outer-bar">
-                  <div class="skill__inner-bar skill__inner-bar--70"></div>
-                </div>
-              </div>
-              <div class="skill">
-                <h3 class="skill__type">MySql</h3><br>
-                <div class="skill__outer-bar">
-                  <div class="skill__inner-bar skill__inner-bar--76"></div>
-                </div>
-              </div>
-
-              <div class="skill">
-                <h3 class="skill__type">Java</h3><br>
-                <div class="skill__outer-bar">
-                  <div class="skill__inner-bar skill__inner-bar--65"></div>
-                </div>
-              </div>
-              <div class="skill">
-                <h3 class="skill__type">Android App Development</h3><br>
-                <div class="skill__outer-bar">
-                  <div class="skill__inner-bar skill__inner-bar--60"></div>
-                </div>
-              </div>
-            </section>
-          </div>
-        </div>
-      </section>
-
-
-      <div class="second-move section-margin"></div>
-
-      <section class="second-section section right">
-        <div class="progress-wrapper progress-bar-wrapper-right">
-          <div class="progress-bar blue-background"></div>
-        </div>
-
-        <div class="section-intro-wrapper blue-text blue-border">
-          <h1 class="section-title blue-text blue-border">
-            <span class="section-title-text blue-text">CONTACT</span>
-            <div class="section-title-decoration styleOne blue-border"></div>
-            <div class="section-title-decoration styleTwo blue-border"></div>
-            <div class="section-title-decoration styleThree blue-background blue-border"></div>
-          </h1>
-          <span class="section-number blue-text">04</span>
-        </div>
-
-        <div class="section-detail-wrapper">
-          <h3 class="section-heading">Linkedin</h3>
-          <p class="section-text">If you'd like to get in touch, please feel free to connect with me on LinkedIn. On
-            LinkedIn, I am active in discussions about network security, data privacy, and vulnerability management. I
-            am available for interviews and I look forward to connecting with other professionals in the web development
-            field.</p>
-          <br>
-          <p><a href="https://www.linkedin.com/in/mdamiruddin"><img
-                src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&amp;logoColor=white"
-                alt="LinkedIn"></a> </p>
-          <h3 class="section-heading">Github</h3>
-          <p class="section-text">I am an aspiring Computer Science student and avid tech enthusiast. I can be found on
-            Github, where I participate in the open source community. I am always searching for different ways to learn
-            and share knowledge pertaining to web development. I stay up to date with the newest technology,
-            vulnerabilities, trends, and web development advancements. If you are looking to collaborate with someone
-            who
-            has a passion for learning and innovation, then you've come to the right place!</p>
-          <br>
-          <p><a href="https://github.com/pitabasdev"><img
-                src="https://img.shields.io/badge/Github-12100E?logo=github&amp;logoColor=white" alt="Medium"></a> </p>
-
-        </div>
-      </section>
-      <footer class="footer">
-        <span class="footer__copyright">Copyright &copy; 2023 - Pitabas Pradhan</span>
-      </footer><br><br>
-
-
-
-
-
-    </div>
-  </div>
-  <script type="module" src="/main.js"></script>
-</body>
-
+					<div class="section-detail-wrapper">
+						<h3 class="section-heading">Linkedin</h3>
+						<p class="section-text">
+							If you'd like to get in touch, please feel free to connect with me
+							on LinkedIn. On LinkedIn, I am active in discussions about network
+							security, data privacy, and vulnerability management. I am
+							available for interviews and I look forward to connecting with
+							other professionals in the web development field.
+						</p>
+						<br />
+						<p>
+							<a href="https://www.linkedin.com/in/mdamiruddin"
+								><img
+									src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&amp;logoColor=white"
+									alt="LinkedIn"
+							/></a>
+						</p>
+						<h3 class="section-heading">Github</h3>
+						<p class="section-text">
+							I am an aspiring Computer Science student and avid tech
+							enthusiast. I can be found on Github, where I participate in the
+							open source community. I am always searching for different ways to
+							learn and share knowledge pertaining to web development. I stay up
+							to date with the newest technology, vulnerabilities, trends, and
+							web development advancements. If you are looking to collaborate
+							with someone who has a passion for learning and innovation, then
+							you've come to the right place!
+						</p>
+						<br />
+						<p>
+							<a href="https://github.com/pitabasdev"
+								><img
+									src="https://img.shields.io/badge/Github-12100E?logo=github&amp;logoColor=white"
+									alt="Medium"
+							/></a>
+						</p>
+					</div>
+				</section>
+				<footer class="footer">
+					<span class="footer__copyright"
+						>Copyright &copy; 2024 - Pitabas Pradhan</span
+					>
+				</footer>
+				<br /><br />
+			</div>
+		</div>
+		<script type="module" src="/main.js"></script>
+	</body>
 </html>
